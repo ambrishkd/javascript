@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM Learning</h1>
+        <p>Lorem ipsum dolor sit.</p>
+    </div>
+    <script>
+        /*
+            1. diff b/w innerText & textContent:
+                inner text returns only visible content whereas,
+                text content return all the context(even those which are made invisible using some css properties)
+
+            2. querySelector: returns the first element of that tag
+                document.querySelector('h2')
+                document.querySelector('#title')
+                document.querySelector('.heading')
+                document.querySelector('input[type="password"]') // selecting input field with attribute password
+            
+            3. querySelectorAll: returns the NodeList of all elements of that tag even only one element is available
+                document.querySelectorAll('li')
+            
+            4. NodeList is not array, and there are no map and other methods of array in the NodeList(except forEach)
+            
+            5. accessing each elements of NodeList using forEach:
+                tempNodeList.forEach(function(tempNode) {
+                    tempNode.style.color = 'green';
+                })
+            
+            NOTE: return type of querySelectorAll is NodeList & return type of getElementByClassName is HTMLCollection
+
+            6. HTMLCollection don't have anything for looping, even it doesn't have forEach just like NodeList
+
+            7. We have to convert HTMLCollection into array:
+                Array.from(tempHTMLCollection) // this is now a array
+        */
+    </script>
+</body>
+</html>
