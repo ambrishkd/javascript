@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning 2</title>
+    <style>
+        .bg-color {
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-color">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    // TOPIC: Traversing DOM
+    
+    // const parent = document.querySelector('.parent')
+    // console.log(parent)
+    // console.log(parent.children) // it will give a HTMLCollection of children
+    // console.log(parent.children[1].innerHTML)
+    // for(let i=0; i<parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML)
+    // }
+    // parent.children[1].style.color = 'orange'
+
+    // Some important properties often used:
+    // console.log(parent.firstElementChild.innerHTML)
+    // console.log(parent.lastElementChild.innerHTML)
+    
+    // const dayOne = document.querySelector('.day')
+    // console.log(dayOne.innerHTML)
+
+    // console.log(dayOne.parentElement) // accessing its parent element
+    // console.log(dayOne.nextElementSibling) // accessing its sibling element
+    
+    // NOTE: childNodes count line breaks, comment and etc as children 
+    // console.log("NODES: ", parent.childNodes) // it will return NodeList of all childNodes
+</script>
+</html>
