@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Request</title>
+</head>
+<body style="background-color: #212121;">
+    <a
+        href="http://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState"
+        target="_blank"
+        style="text-decoration: none; color: #fff; font-size: 25px;"
+    >
+        XMLHttpRequest Article 🔗
+    </a>
+    <br>
+    <a
+        href="https://github.com/v8/v8/tree/main/src/d8"
+        target="_blank"
+        style="text-decoration: none; color: #fff; font-size: 25px;"
+    >
+        Console log Implementation 🔗
+    </a>
+</body>
+<script>
+    // TOPIC: XML API Request(traditional way)
+
+    const requestURL = "https://api.github.com/users/ambrishkd"
+    
+    // sabse pehle ek object banate hai
+    const xhr = new XMLHttpRequest()
+    
+    // phir request type banate hai
+    xhr.open('GET', requestURL)
+    
+    // monitoring changing states
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText) // convert the string data into JSON(object)
+            console.log(`There are ${data.followers} followers of ${data.name}`)
+        }
+    }
+    // phir request ki jaati hai
+    xhr.send()
+
+    // NOTE:
+    // github api, randomuser.me, jsonformatter, xmlhttprequest article, v8 engine github repo
+</script>
+</html>
