@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <h1>Learning JS</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // TOPIC: setTimeout() and clearTimeout()
+
+    function changeHeading() {
+        document.querySelector('h1').innerHTML = 'Learning JavaScript'
+        console.log('Changed')
+    }
+
+    const timeoutId = setTimeout(changeHeading, 5000)
+    
+    document.querySelector('#stop').addEventListener('click', function(e) {
+        clearTimeout(timeoutId)
+        console.log('Stopped')
+    })
+
+    // TOPIC: setInterval() and clearInterval()
+
+    function keepChangingHeading() {
+        document.querySelector('h1').innerHTML = 'Learning JavaScript'
+        const d = new Date();
+        console.log(d.getSeconds())
+    }
+    function keepChangingBackHeading() {
+        document.querySelector('h1').innerHTML = 'Learning JS'
+        const d = new Date();
+        console.log(d.getSeconds())
+    }
+
+    let intervalId1
+    let intervalId2
+    
+    document.querySelector('#start').addEventListener('click', function(e) {
+        intervalId1 = setInterval(keepChangingHeading, 1000)
+        intervalId2 = setInterval(keepChangingBackHeading, 2000)
+        console.log('Started')
+    })
+
+    document.querySelector('#stop').addEventListener('click', function(e) {
+        clearInterval(intervalId1)
+        clearInterval(intervalId2)
+        console.log('Stopped')
+    })
+
+</script>
+</html>
