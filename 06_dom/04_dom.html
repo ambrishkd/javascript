@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning 4</title>
+    <style>
+        .bg-color {
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-color">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // TOPIC: Edit and remove elements in DOM
+    
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('Python')
+    addLanguage('TypeScript')
+
+    function addOptimisedLanguage(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptimisedLanguage('GoLang')
+    addOptimisedLanguage('C++')
+
+    // Edit:
+
+    const selectedLang = document.querySelector('li:nth-child(2)')
+    // selectedLang.innerHTML = 'Ruby' // not optimized
+    const newLi = document.createElement('li')
+    newLi.textContent = 'Ruby' // a bit optimized
+    selectedLang.replaceWith(newLi)
+
+    // Remove:
+    
+    const removeLang = document.querySelector('li:last-child')
+    removeLang.remove()
+</script>
+</html>

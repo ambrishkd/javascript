@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning 3</title>
+    <style>
+        .bg-color {
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-color">
+</body>
+<script>
+    // TOPIC: Creating a new element in DOM
+
+    const div = document.createElement('div')
+    div.className = 'main'
+    div.id = 'myId'
+    div.setAttribute('title', 'sample title')
+    div.style.color = 'orange'
+    // div.innerText = 'this is a div' // method 1
+    const text = document.createTextNode('this is a div')
+    div.appendChild(text) // method 2
+    
+    // appending this div inside body
+    document.body.appendChild(div)
+</script>
+</html>
