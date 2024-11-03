@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button>Button</button>
+</body>
+<script>
+    class React {
+        constructor() {
+            this.library = "React"
+            this.server = "http://localhost:3000"
+            document.querySelector("button").addEventListener("click", this.handleClick) // not using bind
+            document.querySelector("button").addEventListener("click", this.handleClick.bind(this)) // using bind
+        }
+        handleClick() {
+            console.log(this) // without 'bind' current context is only button (which is calling this func)
+            console.log(this.server) // but by using 'bind' we can access other members of class as 'bind' binds all members in current context 
+        }
+    }
+    const app = new React()
+</script>
+</html>
