@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // Lexical scoping: Inner functions have access to outer function variables.
+
+    function outer() {
+        let username = "sam"
+        let password = "sam@123"
+        function inner() {
+            console.log(username)
+        }
+        function inner2() {
+            console.log(password)
+        }
+        inner()
+        inner2()
+    }
+    outer()
+
+    // Closure:
+
+    function mainFunc() {
+        let browser = "chrome"
+        function logBrowser() {
+            console.log(browser)
+        }
+        return logBrowser
+    }
+    let val = mainFunc()
+    val()
+
+    /*
+    NOTE:
+    - As in line 38, mainFunc is calling and after that its executional context should be deleted.
+    - But here, mainFunc is returning logBrowser and that doesn't mean only that scope will be returned.
+    - It will return outer mainFunc lexical scoping with it.
+    - That's why we can access browser variable even after calling val() function in line 39.
+    - And that's called closure.
+    */
+
+    // Real-world scenario problem where closure is used:
+    
+    // Problem: On clicking each button, background color of body should change.
+
+    // Solution 1:
+    // We will target each button with their id and change color accordingly.
+
+    // Solution 2:
+    // We will make a click handler and change color accordingly.
+    // So basically, closure will be used here in this solution or method.
+
+    function clickHandler(color) {
+        // document.body.style.backgroundColor = `${color}` // we will not change color directly, instead return a func
+        function changeBG() {
+            document.body.style.backgroundColor = `${color}`
+        }
+        return changeBG
+    }
+    document.getElementById("orange").onclick = clickHandler("orange")
+    document.getElementById("green").onclick = clickHandler("green")
+
+    /*
+    Problem in line 62:
+    - As onclick demands a function, but here if we pass this () then method will executed instantly
+    - It will not wait for click event.
+    - So that's why we need to return a function from clickHandler function
+    - And that inner function of clickHandler will handle the bg color changing
+    - And that inner function has access to color we pass in clickHandler
+    - Hence that's one of the real-world scenario where closure is being used.
+    */
+</script>
+</html>
