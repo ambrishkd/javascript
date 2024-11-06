@@ -16,3 +16,18 @@
     <li>Arrow Function</li>
     <li>IIFE</li> 
 </details>
+
+<details>
+    <summary>Conditionals</summary>
+    <li>If-else</li>
+    <li>Switch</li>
+    <li>Truthy and Falsy</li> 
+</details>
+
+<details>
+    <summary>Iterations</summary>
+    <li>For</li>
+    <li>While and Do While</li>
+    <li>For of, in and each</li>
+    <li>Filter, Map and Reduce</li>
+</details>
