@@ -31,3 +31,11 @@
     <li>For of, in and each</li>
     <li>Filter, Map and Reduce</li>
 </details>
+
+<details>
+    <summary>DOM</summary>
+    <li>NodeList, HTMLCollection, etc.</li>
+    <li>Traversing DOM</li>
+    <li>Create a new Element</li>
+    <li>Edit and Remove a Element</li>
+</details>
