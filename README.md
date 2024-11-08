@@ -39,3 +39,14 @@
     <li>Create a new Element</li>
     <li>Edit and Remove a Element</li>
 </details>
+
+<details>
+    <summary>Events</summary>
+</details>
+
+<details>
+    <summary>Advanced</summary>
+    <li>Set Timeout and Interval</li>
+    <li>XMLHttpRequest</li>
+    <li>Promises, Async Await, Fetch and Error Handling</li>
+</details>
