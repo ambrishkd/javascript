@@ -50,3 +50,18 @@
     <li>XMLHttpRequest</li>
     <li>Promises, Async Await, Fetch and Error Handling</li>
 </details>
+
+<details>
+    <summary>OOP in JS</summary>
+    <li>Intro to OOP</li>
+    <li>Object Literal</li>
+    <li>Prototypes</li>
+    <li>Inheritance</li>
+    <li>Call Function</li>
+    <li>Classes</li>
+    <li>Class Inheritance</li>
+    <li>Static Properties</li>
+    <li>Bind</li>
+    <li>Descriptor Property</li>
+    <li>Getter and Setter</li>
+</details>
