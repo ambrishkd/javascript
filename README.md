@@ -65,3 +65,8 @@
     <li>Descriptor Property</li>
     <li>Getter and Setter</li>
 </details>
+
+<details>
+    <summary>Misc</summary>
+    <li>Lexical Scoping and Closure</li>
+</details>
